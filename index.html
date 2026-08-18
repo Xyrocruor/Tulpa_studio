@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>筑灵 · Tulpa Studio — 创造与记录你的心智伙伴</title>
+<meta name="description" content="一站式 tulpa 创造工具：性格与角色设计、新手教程、每日练习、日志记录与里程碑追踪。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 背景层 -->
+<div class="bg" aria-hidden="true">
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="aurora aurora-3"></div>
+  <div id="stars" class="stars"></div>
+  <div class="vignette"></div>
+</div>
+
+<!-- 顶栏 -->
+<header class="topbar" id="topbar">
+  <a class="brand" href="#/dashboard">
+    <span class="brand-mark">✦</span>
+    <span class="brand-text">筑灵<em>Tulpa Studio</em></span>
+  </a>
+  <nav class="nav" id="nav">
+    <a href="#/dashboard"   data-view="dashboard">仪表盘</a>
+    <a href="#/studio"      data-view="studio">设计</a>
+    <a href="#/guide"       data-view="guide">教程</a>
+    <a href="#/journal"     data-view="journal">记录</a>
+    <a href="#/milestones"  data-view="milestones">里程碑</a>
+    <a href="#/resources"   data-view="resources">资源</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="打开菜单">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main class="main">
+
+  <!-- ================= 仪表盘 ================= -->
+  <section class="view" id="view-dashboard">
+    <div class="view-head">
+      <h1 class="view-title">仪表盘</h1>
+      <p class="view-sub" id="dashSub">你的创造之旅，从这里开始</p>
+    </div>
+    <div id="dashContent"></div>
+  </section>
+
+  <!-- ================= 设计工作室 ================= -->
+  <section class="view" id="view-studio">
+    <div class="view-head">
+      <h1 class="view-title">设计工作室</h1>
+      <p class="view-sub">为 ta 塑造名字、性格与形象</p>
+    </div>
+    <div id="studioContent"></div>
+  </section>
+
+  <!-- ================= 教程中心 ================= -->
+  <section class="view" id="view-guide">
+    <div class="view-head">
+      <h1 class="view-title">教程中心</h1>
+      <p class="view-sub">从零到一，完整的新手指南</p>
+    </div>
+    <div class="guide-tabs" id="guideTabs">
+      <button class="gtab active" data-gtab="lessons">分步教程</button>
+      <button class="gtab" data-gtab="glossary">术语表</button>
+      <button class="gtab" data-gtab="faq">常见问题</button>
+      <button class="gtab" data-gtab="mistakes">常见误区</button>
+    </div>
+    <div id="guideContent"></div>
+  </section>
+
+  <!-- ================= 记录日志 ================= -->
+  <section class="view" id="view-journal">
+    <div class="view-head">
+      <h1 class="view-title">记录日志</h1>
+      <p class="view-sub">练习计时、日记与每一次回应</p>
+    </div>
+    <div id="journalContent"></div>
+  </section>
+
+  <!-- ================= 里程碑 ================= -->
+  <section class="view" id="view-milestones">
+    <div class="view-head">
+      <h1 class="view-title">里程碑</h1>
+      <p class="view-sub">见证 ta 成长的每一个脚印</p>
+    </div>
+    <div id="milestonesContent"></div>
+  </section>
+
+  <!-- ================= 资源 ================= -->
+  <section class="view" id="view-resources">
+    <div class="view-head">
+      <h1 class="view-title">资源库</h1>
+      <p class="view-sub">社区、指南与更多资料</p>
+    </div>
+    <div id="resourcesContent"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>✦ 筑灵 Tulpa Studio · 仅供学习与参考，请理性看待 tulpa 实践，照顾好自己</p>
+</footer>
+
+<!-- 提示浮层 -->
+<div class="toast" id="toast" role="status"></div>
+<!-- 计时器悬浮窗 -->
+<div class="timerfab" id="timerFab" hidden>
+  <div class="timerfab-time" id="timerFabTime">00:00</div>
+  <button class="timerfab-btn" id="timerFabBtn" title="开始/暂停">▶</button>
+  <button class="timerfab-btn ghost" id="timerFabStop" title="结束并记录">✓</button>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
